@@ -1,34 +1,81 @@
 # 全栈软件开发 Coding Skills — Web 版
 
-这是 `fullstack-coding-skills-zh` 的**浏览器对话版**。它不依赖 `.agents/skills`、`.claude/skills` 或本地 Agent 自动加载机制，可以直接用于 ChatGPT、Claude、Gemini 等网页版。
+这是面向 **ChatGPT、Claude、Gemini 等网页版 AI** 的软件开发 Skills 工作台。仓库采用模块化维护：总控提示词、22 个专业 Skill、7 个常用 Recipe 与网页 UI 分开存放，便于 Git diff、PR、审查和持续迭代。
 
-## 推荐使用方式
+## 当前能力
 
-1. 打开 `index.html`，点击“复制总控提示词”。
-2. 把总控提示词粘贴到一个新的 AI 开发对话。
-3. 填写并粘贴 `PROJECT_CONTEXT_TEMPLATE.md`，再上传代码/文档/截图。
-4. 日常复杂需求直接说：`执行完整开发流程：……`。
-5. 某个阶段需要加强时，在网页中复制对应模块提示词继续粘贴。
-6. 对话过长时使用 `HANDOFF_PROMPTS.md` 生成交接卡，再开新对话恢复。
+- 22 个软件工程专业工作模式
+- 7 个常见开发任务快捷模板
+- 总控 Prompt：从需求 → 代码分析 → 计划 → 实现 → 测试 → 审查 → 验收
+- 项目上下文卡
+- 长对话交接/恢复 Prompt
+- Skill 搜索与分类筛选
+- 在线预览、一键复制提示词
+- 纯静态网页，无 npm / 构建依赖
+
+## 本地运行
+
+因为仓库版网页会通过 `fetch()` 动态读取 Markdown 模块，不建议直接双击 `file://index.html`。
+
+在仓库目录执行：
+
+```bash
+python -m http.server 8080
+```
+
+然后浏览器打开：
+
+```text
+http://localhost:8080
+```
+
+也可以使用任意静态 Web Server 或部署到 GitHub Pages。
+
+## 使用方式
+
+1. 打开网页，先点“复制总控提示词”。
+2. 粘贴到新的 AI 开发对话。
+3. 再复制 `PROJECT_CONTEXT_TEMPLATE.md`，补充项目情况、技术栈和本次任务。
+4. 普通复杂任务直接说：`执行完整开发流程：……`。
+5. 某阶段需要强化时，在网页里搜索并复制对应 Skill。
+6. 对话过长时使用 `HANDOFF_PROMPTS.md` 生成交接卡，在新对话继续。
 
 ## 目录
 
-- `index.html`：单文件可视化网页版，支持搜索和一键复制。
-- `WEB_MASTER_PROMPT.md`：最重要的总控提示词。
-- `PROJECT_CONTEXT_TEMPLATE.md`：项目上下文卡。
-- `HANDOFF_PROMPTS.md`：长对话交接/恢复。
-- `prompts/modules/`：22 个专业工作模式。
-- `prompts/recipes/`：常用任务快捷模板。
-- `FULL_WEB_PROMPT_PACK.md`：全部内容合并成一个 Markdown。
+```text
+.
+├── index.html                     # 模块化网页版入口
+├── catalog.json                   # Skill / Recipe 前端目录
+├── WEB_MASTER_PROMPT.md           # Web 总控提示词
+├── PROJECT_CONTEXT_TEMPLATE.md    # 项目上下文卡
+├── HANDOFF_PROMPTS.md             # 长对话交接/恢复
+├── manifest.json                  # 版本信息
+└── prompts/
+    ├── modules/                   # 22 个专业工作模式
+    └── recipes/                   # 7 个快捷开发模板
+```
 
-## 和 Agent Skills 版的区别
+## 新增或修改 Skill
 
-| Agent Skills 版 | Web 版 |
-|---|---|
-| AI 根据 description 自动加载 SKILL.md | 用户粘贴总控提示词，按需粘贴模块 |
-| 能直接操作本地仓库/终端（取决于 Agent） | 是否能执行取决于网页版工具能力 |
-| 适合持续工程执行 | 适合网页问答、上传文件、评审、规划、逐步编码 |
-| 上下文可由 Agent 读取项目补充 | 通过“项目上下文卡 + 交接卡”保持连续性 |
+修改已有 Skill：直接编辑 `prompts/modules/<skill>.md`，网页会自动读取最新内容。
 
-### 最关键的防误报规则
-网页版经常无法真实运行项目，因此本版本明确要求：**没有真实执行测试/构建，就不能声称测试通过或开发完成。**
+新增 Skill 时：
+
+1. 在 `prompts/modules/` 新建 Markdown 文件。
+2. 保持“模块说明 + `## 可复制提示词` + `text` 代码块”的结构。
+3. 在 `catalog.json` 增加对应条目。
+4. 通过本地 HTTP Server 打开网页，验证搜索、预览和复制。
+5. 提交独立 Commit / PR。
+
+## 最关键的防误报规则
+
+网页版经常不能真实执行本地命令，因此总控与各模块统一要求：**没有真实执行测试、构建、浏览器验证或其他质量门禁，就不能声称测试通过、构建成功或开发完成。**
+
+## Git 开发约定
+
+- `main`：稳定版本
+- `feature/*`：功能开发
+- `fix/*`：Bug 修复
+- 中大型修改通过 PR 合并
+- 不把无关重构混入功能 PR
+- 合并前检查页面、Catalog 与 Markdown 路径一致
