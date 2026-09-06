@@ -1,0 +1,35 @@
+{
+  "skills": [
+    {"id":"fullstack-development","name":"全栈开发总控","category":"总控","file":"prompts/modules/fullstack-development.md","description":"端到端组织需求、分析、计划、实现、测试、审查与交付。"},
+    {"id":"requirement-analysis","name":"需求分析","category":"分析","file":"prompts/modules/requirement-analysis.md","description":"把模糊产品需求转换为可开发、可测试的工程规格。"},
+    {"id":"codebase-analysis","name":"代码库分析","category":"分析","file":"prompts/modules/codebase-analysis.md","description":"理解现有仓库、模块边界、调用链、数据流和项目惯例。"},
+    {"id":"architecture-design","name":"架构设计","category":"设计","file":"prompts/modules/architecture-design.md","description":"为中大型软件变更设计可实施、可测试、可回滚的架构。"},
+    {"id":"implementation-planning","name":"实施计划","category":"设计","file":"prompts/modules/implementation-planning.md","description":"把需求和方案拆成文件级、依赖有序、可验证的执行计划。"},
+    {"id":"frontend-development","name":"前端开发","category":"开发","file":"prompts/modules/frontend-development.md","description":"实现生产级页面、组件、状态、交互和响应式前端功能。"},
+    {"id":"backend-development","name":"后端开发","category":"开发","file":"prompts/modules/backend-development.md","description":"实现服务端业务逻辑、事务、权限、任务、缓存和第三方集成。"},
+    {"id":"database-development","name":"数据库开发","category":"开发","file":"prompts/modules/database-development.md","description":"设计 Schema、Migration、索引、SQL/ORM 与数据回填。"},
+    {"id":"api-development","name":"API 开发","category":"开发","file":"prompts/modules/api-development.md","description":"设计稳定契约、校验、错误、鉴权、分页、幂等和版本策略。"},
+    {"id":"test-driven-development","name":"测试驱动开发","category":"质量","file":"prompts/modules/test-driven-development.md","description":"以 Red → Green → Refactor 驱动核心逻辑实现与缺陷修复。"},
+    {"id":"systematic-debugging","name":"系统化调试","category":"质量","file":"prompts/modules/systematic-debugging.md","description":"通过复现、证据链和单一假设定位根因，而不是猜测式修复。"},
+    {"id":"webapp-testing","name":"Web 应用浏览器测试","category":"质量","file":"prompts/modules/webapp-testing.md","description":"用真实浏览器验证关键 Web 流程、异常状态和控制台/网络信号。"},
+    {"id":"code-review","name":"代码审查","category":"审查","file":"prompts/modules/code-review.md","description":"高信号审查 correctness、回归、边界、事务、测试和维护风险。"},
+    {"id":"security-review","name":"安全审查","category":"审查","file":"prompts/modules/security-review.md","description":"检查认证授权、输入验证、注入、上传、Secret、支付和敏感数据。"},
+    {"id":"performance-optimization","name":"性能优化","category":"优化","file":"prompts/modules/performance-optimization.md","description":"基于测量定位瓶颈并量化性能优化前后收益。"},
+    {"id":"refactoring","name":"安全重构","category":"优化","file":"prompts/modules/refactoring.md","description":"在行为保护下小步重构，减少复杂度和技术债。"},
+    {"id":"dependency-upgrade","name":"依赖升级","category":"运维","file":"prompts/modules/dependency-upgrade.md","description":"安全升级框架、运行时和依赖并处理 breaking changes。"},
+    {"id":"git-workflow","name":"Git 工作流","category":"运维","file":"prompts/modules/git-workflow.md","description":"管理分支、提交、冲突、PR 与变更隔离，避免覆盖用户工作。"},
+    {"id":"ci-cd-debugging","name":"CI/CD 调试","category":"运维","file":"prompts/modules/ci-cd-debugging.md","description":"定位流水线、构建、环境、权限与部署失败的真实根因。"},
+    {"id":"observability-development","name":"可观测性开发","category":"运维","file":"prompts/modules/observability-development.md","description":"设计结构化日志、指标、Tracing、审计和生产诊断能力。"},
+    {"id":"release-delivery","name":"发布与交付","category":"交付","file":"prompts/modules/release-delivery.md","description":"规划部署顺序、迁移、灰度、回滚、Smoke Test 和交付说明。"},
+    {"id":"verification-before-completion","name":"完成前验证","category":"交付","file":"prompts/modules/verification-before-completion.md","description":"用真实测试、构建、Diff 和验收证据决定是否可以声明完成。"}
+  ],
+  "recipes": [
+    {"id":"existing-project-feature","name":"现有项目新增功能","file":"prompts/recipes/01-existing-project-feature.md"},
+    {"id":"bugfix","name":"Bug 修复","file":"prompts/recipes/02-bugfix.md"},
+    {"id":"code-review-recipe","name":"代码审查","file":"prompts/recipes/03-code-review.md"},
+    {"id":"frontend-from-ui","name":"根据 UI / 截图开发前端","file":"prompts/recipes/04-frontend-from-ui.md"},
+    {"id":"api-db-change","name":"API + 数据库变更","file":"prompts/recipes/05-api-and-db-change.md"},
+    {"id":"refactor-recipe","name":"重构","file":"prompts/recipes/06-refactor.md"},
+    {"id":"release-check","name":"发布前验收","file":"prompts/recipes/07-release-check.md"}
+  ]
+}
