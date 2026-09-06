@@ -12,13 +12,18 @@ if [[ ! -d "$TARGET/.git" ]]; then
 fi
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-mkdir -p "$TARGET/.agents/skills/repository-development"
-mkdir -p "$TARGET/.claude/skills/repository-development"
+mkdir -p "$TARGET/.agents/skills" "$TARGET/.claude/skills"
+
 cp "$ROOT/AGENTS.md" "$TARGET/AGENTS.md"
 cp "$ROOT/CLAUDE.md" "$TARGET/CLAUDE.md"
 cp "$ROOT/AI_SKILLS.md" "$TARGET/AI_SKILLS.md"
-cp "$ROOT/.agents/skills/repository-development/SKILL.md" "$TARGET/.agents/skills/repository-development/SKILL.md"
-cp "$ROOT/.claude/skills/repository-development/SKILL.md" "$TARGET/.claude/skills/repository-development/SKILL.md"
 
-echo "Installed AI repository development skills into: $TARGET"
-echo "Review the files, then commit them to the target repository default branch."
+# Canonical skill source is .agents/skills. Copy physical files to both agent locations
+# so the installed project works consistently on macOS, Linux and Windows checkouts.
+cp -R "$ROOT/.agents/skills/." "$TARGET/.agents/skills/"
+cp -R "$ROOT/.agents/skills/." "$TARGET/.claude/skills/"
+
+echo "Installed repository-native AI development rules and skills into: $TARGET"
+echo "Codex:  AGENTS.md + .agents/skills/*/SKILL.md"
+echo "Claude: CLAUDE.md + .claude/skills/*/SKILL.md"
+echo "Next: review the added files and commit them to the target repository default branch."
