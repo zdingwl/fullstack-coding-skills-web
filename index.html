@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="全栈软件开发 Coding Skills 网页版：22 个专业工作模式和 7 个开发快捷流程。">
+<title>全栈软件开发 Coding Skills · Web</title>
+<style>
+:root{--bg:#f4f6f8;--panel:#fff;--text:#172033;--muted:#667085;--line:#e4e7ec;--brand:#2563eb;--brand2:#1d4ed8;--soft:#eff6ff;--ok:#067647;--warn:#92400e;--shadow:0 12px 34px rgba(15,23,42,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}button,input{font:inherit}.app{max-width:1240px;margin:auto;padding:28px 20px 72px}.hero{padding:38px;border-radius:26px;background:linear-gradient(135deg,#111827,#1f2937 58%,#26364f);color:#fff;box-shadow:0 20px 55px rgba(15,23,42,.16)}.hero-top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.badge{display:inline-flex;padding:6px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);font-size:13px;color:#dbeafe}.hero h1{margin:14px 0 10px;font-size:clamp(30px,5vw,48px);line-height:1.1;letter-spacing:-.03em}.hero p{margin:0;max-width:780px;color:#cbd5e1;line-height:1.75}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.stat{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.08);color:#e2e8f0;font-size:13px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{border:0;border-radius:12px;padding:11px 15px;cursor:pointer;font-weight:700}.btn.primary{background:#fff;color:#111827}.btn.secondary{background:#334155;color:#fff}.btn.ghost{background:var(--soft);color:var(--brand2)}.btn:hover{transform:translateY(-1px)}.notice{margin-top:18px;padding:13px 15px;border-radius:12px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);color:#fde68a;font-size:13px;line-height:1.6}.toolbar{position:sticky;top:0;z-index:20;padding:14px 0;background:rgba(244,246,248,.94);backdrop-filter:blur(12px)}.search{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;outline:0;box-shadow:0 3px 12px rgba(15,23,42,.03)}.search:focus{border-color:#93c5fd;box-shadow:0 0 0 4px #dbeafe}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chip{border:1px solid var(--line);background:#fff;color:#475467;border-radius:999px;padding:7px 11px;cursor:pointer;font-size:13px}.chip.active{background:#172033;color:#fff;border-color:#172033}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:30px 0 14px}.section-head h2{margin:0;font-size:24px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}.count{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{display:flex;flex-direction:column;min-height:176px;padding:18px;border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:0 3px 14px rgba(15,23,42,.035)}.card:hover{box-shadow:var(--shadow);border-color:#cbd5e1}.card-top{display:flex;justify-content:space-between;gap:12px}.card h3{margin:0;font-size:18px}.slug{display:inline-block;margin-top:5px;color:var(--brand);font:12px ui-monospace,SFMono-Regular,Menlo,monospace}.tag{height:max-content;border-radius:999px;background:#f2f4f7;padding:5px 8px;color:#475467;font-size:12px}.desc{margin:14px 0 18px;color:var(--muted);font-size:14px;line-height:1.65;flex:1}.card-actions{display:flex;gap:8px}.card-actions .btn{padding:9px 12px;font-size:13px}.empty{display:none;padding:30px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #cbd5e1;border-radius:16px}.footer{margin-top:38px;color:var(--muted);font-size:13px;text-align:center}.modal-backdrop{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.55)}.modal-backdrop.open{display:flex}.modal{width:min(920px,100%);max-height:88vh;display:flex;flex-direction:column;background:#fff;border-radius:20px;box-shadow:0 25px 80px rgba(0,0,0,.25)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line)}.modal-head h3{margin:0}.close{border:0;background:#f2f4f7;border-radius:9px;width:36px;height:36px;cursor:pointer}.modal-body{overflow:auto;padding:18px 20px}.raw{margin:0;white-space:pre-wrap;word-break:break-word;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#344054}.modal-foot{display:flex;justify-content:flex-end;gap:10px;padding:14px 20px;border-top:1px solid var(--line)}.toast{position:fixed;right:20px;bottom:20px;z-index:80;display:none;padding:11px 14px;border-radius:11px;background:#101828;color:#fff;box-shadow:var(--shadow);font-size:13px}.toast.show{display:block}.error{color:#b42318}.hidden{display:none!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-top{display:block}}@media(max-width:620px){.app{padding:14px 12px 44px}.hero{padding:26px 20px;border-radius:20px}.grid{grid-template-columns:1fr}.section-head{align-items:flex-start}.count{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<section class="hero">
+  <div class="hero-top"><div><span class="badge">Git 仓库模块化版 · v1.0</span><h1>全栈软件开发<br>Coding Skills</h1><p>给 ChatGPT、Claude、Gemini 等网页版使用的软件工程提示词工作台。总控负责完整开发流程，专业 Skill 负责强化某个阶段，Recipe 负责常见任务快速启动。</p></div></div>
+  <div class="stats"><span class="stat">22 个专业 Skills</span><span class="stat">7 个快捷 Recipes</span><span class="stat">无前端框架依赖</span><span class="stat">Git 友好模块化维护</span></div>
+  <div class="actions">
+    <button class="btn primary" data-root="WEB_MASTER_PROMPT.md">复制总控提示词</button>
+    <button class="btn secondary" data-root="PROJECT_CONTEXT_TEMPLATE.md">复制项目上下文卡</button>
+    <button class="btn secondary" data-root="HANDOFF_PROMPTS.md">复制交接提示词</button>
+  </div>
+  <div class="notice">完成声明必须有证据：没有真实执行测试、构建或浏览器验证时，不得声称“已通过 / 已完成”。</div>
+</section>
+
+<div class="toolbar">
+  <input id="search" class="search" placeholder="搜索 Skill：调试、API、数据库、安全、前端、发布……" autocomplete="off">
+  <div id="chips" class="chips"></div>
+</div>
+
+<section>
+  <div class="section-head"><div><h2>常用快捷任务</h2><p>直接复制后补充你的任务内容。</p></div><span class="count" id="recipeCount"></span></div>
+  <div class="grid" id="recipes"></div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>专业工作模式</h2><p>按阶段加载，不必一次把所有规则塞进对话。</p></div><span class="count" id="skillCount"></span></div>
+  <div class="grid" id="skills"></div>
+  <div class="empty" id="empty">没有找到匹配的 Skill。</div>
+</section>
+<footer class="footer">fullstack-coding-skills-web · 模块化静态网页 · GitHub 维护版</footer>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head"><h3 id="modalTitle">预览</h3><button class="close" id="modalClose" aria-label="关闭">×</button></div>
+    <div class="modal-body"><pre class="raw" id="modalContent"></pre></div>
+    <div class="modal-foot"><button class="btn ghost" id="copyPrompt">复制提示词正文</button><button class="btn primary" id="copyFull">复制完整文件</button></div>
+  </div>
+</div>
+<div class="toast" id="toast">已复制</div>
+
+<script>
+const state={catalog:null,category:'全部',query:'',currentText:'',currentPrompt:''};
+const $=s=>document.querySelector(s);
+const escapeHtml=s=>s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+function promptFromMarkdown(md){const m=md.match(/```(?:text)?\s*\n([\s\S]*?)```/i);return (m?m[1]:md).trim();}
+async function loadText(path){const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${r.status} ${r.statusText}`);return r.text();}
+function toast(msg='已复制'){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),1300)}
+async function copy(text){try{await navigator.clipboard.writeText(text)}catch{const a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}toast()}
+async function openFile(item){try{const md=await loadText(item.file);state.currentText=md;state.currentPrompt=promptFromMarkdown(md);$('#modalTitle').textContent=item.name;$('#modalContent').textContent=md;$('#modalBackdrop').classList.add('open');$('#modalBackdrop').setAttribute('aria-hidden','false')}catch(e){toast('读取失败');console.error(e)}}
+function closeModal(){$('#modalBackdrop').classList.remove('open');$('#modalBackdrop').setAttribute('aria-hidden','true')}
+function card(item,isRecipe=false){const article=document.createElement('article');article.className='card';article.dataset.search=`${item.name} ${item.id||''} ${item.category||''} ${item.description||''}`.toLowerCase();article.dataset.category=item.category||'快捷';article.innerHTML=`<div class="card-top"><div><h3>${escapeHtml(item.name)}</h3>${item.id?`<span class="slug">${escapeHtml(item.id)}</span>`:''}</div><span class="tag">${escapeHtml(item.category||'快捷')}</span></div><p class="desc">${escapeHtml(item.description||(isRecipe?'常用开发任务快捷启动模板。':''))}</p><div class="card-actions"><button class="btn ghost view">查看</button><button class="btn primary quick-copy">复制</button></div>`;article.querySelector('.view').onclick=()=>openFile(item);article.querySelector('.quick-copy').onclick=async()=>{try{const md=await loadText(item.file);await copy(promptFromMarkdown(md))}catch(e){toast('读取失败')}};return article}
+function renderCards(){const q=state.query.toLowerCase();let visible=0;document.querySelectorAll('#skills .card').forEach(el=>{const okCategory=state.category==='全部'||el.dataset.category===state.category;const okQuery=!q||el.dataset.search.includes(q);el.classList.toggle('hidden',!(okCategory&&okQuery));if(okCategory&&okQuery)visible++});$('#empty').style.display=visible?'none':'block'}
+function renderCatalog(){const {skills,recipes}=state.catalog;$('#skillCount').textContent=`${skills.length} 个`;$('#recipeCount').textContent=`${recipes.length} 个`;skills.forEach(x=>$('#skills').appendChild(card(x)));recipes.forEach(x=>$('#recipes').appendChild(card(x,true)));const cats=['全部',...new Set(skills.map(x=>x.category))];cats.forEach((c,i)=>{const b=document.createElement('button');b.className='chip'+(i===0?' active':'');b.textContent=c;b.onclick=()=>{state.category=c;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));renderCards()};$('#chips').appendChild(b)})}
+async function init(){if(location.protocol==='file:'){document.querySelector('.notice').innerHTML+=' 当前通过 <b>file://</b> 打开；模块化版本请使用 HTTP 服务（例如 <code>python -m http.server 8080</code>）或 GitHub Pages。'}try{const r=await fetch('catalog.json',{cache:'no-store'});state.catalog=await r.json();renderCatalog()}catch(e){$('#empty').style.display='block';$('#empty').textContent='目录加载失败。请通过 HTTP 服务或 GitHub Pages 打开本页面。';console.error(e)}}
+$('#search').addEventListener('input',e=>{state.query=e.target.value.trim();renderCards()});document.querySelectorAll('[data-root]').forEach(b=>b.onclick=async()=>{try{const md=await loadText(b.dataset.root);await copy(promptFromMarkdown(md))}catch(e){toast('读取失败')}});$('#modalClose').onclick=closeModal;$('#modalBackdrop').onclick=e=>{if(e.target===$('#modalBackdrop'))closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('#copyPrompt').onclick=()=>copy(state.currentPrompt);$('#copyFull').onclick=()=>copy(state.currentText);init();
+</script>
+</body>
+</html>
